@@ -8,7 +8,8 @@ import copy
 
 class DataGet(object):
     def __init__(self) -> None:
-        self.__url: str = "ws://m7.ctymc.cn:21443/get/new-data/"
+        self.__host = "ws://m7.ctymc.cn:21443"
+        self.__url: str = "/get/new-data/"
         self.__ws: websocket.WebSocketApp
         self.__isConnect: bool = False
         self.__msgState: bool = False
@@ -47,7 +48,7 @@ class DataGet(object):
 
     def buildConnect(self, playerName: str) -> bool:
         if self.__isConnect == False and self.__wsThread.is_alive()==False:
-            url = self.__url + playerName
+            url = self.__host + self.__url + playerName
             self.__ws = websocket.WebSocketApp(url,
                                                on_error=self.__ws_on_error,
                                                on_open=self.__ws_on_open,
