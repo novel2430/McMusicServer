@@ -8,7 +8,7 @@ import copy
 
 class DataGet(object):
     def __init__(self) -> None:
-        self.__url: str = "ws://127.0.0.1:44349/get/new-data/"
+        self.__url: str = "ws://m7.ctymc.cn:21443/get/new-data/"
         self.__ws: websocket.WebSocketApp
         self.__isConnect: bool = False
         self.__msgState: bool = False
