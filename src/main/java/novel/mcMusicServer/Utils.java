@@ -1,7 +1,10 @@
 package novel.mcMusicServer;
 
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileWriter;
+import java.io.InputStream;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.system.ApplicationHome;
 import novel.mcMusicServer.pojo.OneData;
@@ -22,6 +25,21 @@ public class Utils {
     BufferedWriter write = new BufferedWriter(new FileWriter(fileName));
     write.write(content);
     write.close();
+  }
+
+  public static String readFromDisk(String fileName) {
+    File file = new File(fileName);
+    if (file.exists() && !file.isDirectory()) {
+      Long fileLength = file.length();
+      byte[] content = new byte[fileLength.intValue()];
+      try (InputStream in = new FileInputStream(file)) {
+        in.read(content);
+        return new String(content);
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    }
+    return null;
   }
 
   public static void printErrorLog(String name, String msg) {
