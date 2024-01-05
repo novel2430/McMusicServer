@@ -78,4 +78,8 @@ class DataGet(object):
             return False
         return True
 
+    def setServerHost(self, host: str) -> None:
+        if host != "":
+            self.__host = host
+
 
