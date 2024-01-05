@@ -48,7 +48,7 @@ dataGet = DataGet.DataGet()
 ```python
 def setServerHost(host: str) -> None:
     # host : 服务器地址
-    # return value : bool, 当前连接是否关闭
+    # return value : None
 ```
 - buildConnect  
 此函数用来建立与服务器的Websocket连接，注意：若当前已**建立了连接且并未断开**，调用此函数将直接return
