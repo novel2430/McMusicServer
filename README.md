@@ -108,7 +108,7 @@ Minecraft端为数据发送端，搭配可获取数据以及发送数据的模�
                    // --> path "." means directory `run` <--
   "Debug": true, // need or not to print thread log
   "Calculate": true, // need or not to do calculation
-  "URL": "m7.ctymc.cn:21443", // Data Transfer Server Address
+  "URL": "http://m7.ctymc.cn:21443", // Data Transfer Server Address
   "PlayerName": "novel" // Player Name
 }
 ```
