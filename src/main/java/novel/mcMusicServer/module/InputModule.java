@@ -9,6 +9,7 @@ import novel.mcMusicServer.myException.MyException;
 import novel.mcMusicServer.pojo.OneData;
 import novel.mcMusicServer.pojo.Response;
 import novel.mcMusicServer.service.websocket.WebSocketServer;
+import novel.mcMusicServer.watchdog.RunningPlayerStateMap;
 
 /**
  * InputModule
@@ -61,6 +62,7 @@ public class InputModule {
 
   public static Response playerJoin(String playerName) throws MyException {
     RunningPlayerCurrentIndexMap.addPlayer(playerName);
+    RunningPlayerStateMap.getInstance().addPlayer(playerName);
     return Utils.buildSuccessResponse("ok");
   }
 
@@ -70,12 +72,14 @@ public class InputModule {
     }
     int index = data.getIndex();
     RunningPlayerCurrentIndexMap.addData(playerName, new FileData(data, index));
+    RunningPlayerStateMap.getInstance().updatePlayer(playerName);
     return Utils.buildSuccessResponse("ok");
   }
 
   public static Response playerLeave(String playerName) throws MyException {
     RunningPlayerCurrentIndexMap.removePlayer(playerName);
     closeAllWebSocket(playerName);
+    RunningPlayerStateMap.getInstance().removePlayer(playerName);
     return Utils.buildSuccessResponse("ok");
   }
 

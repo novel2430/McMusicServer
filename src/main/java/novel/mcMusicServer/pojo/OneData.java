@@ -32,4 +32,8 @@ public class OneData {
   private Map<String, Double> motion = new HashMap<String, Double>();
   @JSONField(name = "Placing", ordinal = 10)
   private Map<String, Double> placing = new HashMap<String, Double>();
+  @JSONField(name = "Monster", ordinal = 11)
+  private Map<String, Double> monster = new HashMap<String, Double>();
+  @JSONField(name = "Attacked", ordinal = 12)
+  private Map<String, Double> attacker = new HashMap<String, Double>();
 }
