@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu May 01 18:01:41 CST 2025
+@default-nexus-163-http\://mirrors.163.com/maven/repository/maven-public/.lastUpdated=1746093700874
+http\://maven.aliyun.com/nexus/content/groups/public/.lastUpdated=1746093701281
+http\://mirrors.163.com/maven/repository/maven-public/.error=Could not transfer artifact org.springframework.boot\:spring-boot-dependencies\:pom\:3.2.1 from/to nexus-163 (http\://mirrors.163.com/maven/repository/maven-public/)\: Connect to mirrors.163.com\:80 [mirrors.163.com/60.191.80.11] failed\: Connect timed out

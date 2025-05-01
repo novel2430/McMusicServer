@@ -36,4 +36,6 @@ public class OneData {
   private Map<String, Double> monster = new HashMap<String, Double>();
   @JSONField(name = "Attacked", ordinal = 12)
   private Map<String, Double> attacker = new HashMap<String, Double>();
+  @JSONField(name = "BiomePredict", ordinal = 13)
+  private Map<String, Double> biomePredict = new HashMap<String, Double>();
 }
